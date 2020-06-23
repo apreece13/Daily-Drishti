@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <>
         <NavBar />
-        {/* <ApplicationViews /> */}
+        <ApplicationViews />
       </>
     );
   }
