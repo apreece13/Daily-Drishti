@@ -31,27 +31,34 @@ class DrishtiForm extends Component {
         this.setState(stateToChange);
     };
 
-    /*  Local method for validation, set loadingStatus, create animal      object, invoke the AnimalManager post method, and redirect to the full animal list
-    */
-    constructNewNewsArticle = evt => {
+    constructNewDrishti = evt => {
         evt.preventDefault();
-        if (this.state.title === "" || this.state.synopsis === "" || this.state.url === "") {
-            window.alert("Please input all fields");
-        } else {
-            this.setState({ loadingStatus: true });
-            const newsArticle = {
-                title: this.state.title,
-                synopsis: this.state.synopsis,
-                url: this.state.url,
-                userId: 1,
-                date: this.state.date,
-            };
+        this.setState({ loadingStatus: true });
+        const dailyDrishti = {
+            bed: this.state.bed,
+            sleep: this.state.sleep,
+            teeth: this.state.teeth,
+            veggie: this.state.veggie,
+            fruit: this.state.fruit,
+            water: this.state.water,
+            protein: this.state.protein,
+            laughed: this.state.laughed,
+            meditation: this.state.meditation,
+            kindness: this.state.kindness,
+            grateful: this.state.grateful,
+            hardThing: this.state.hardThing,
+            movement: this.state.movement,
+            food: this.state.food,
+            notes: this.state.notes,
+            userId: 1,
+            date: this.state.date,
+        };
 
-            // Create the animal and redirect user to animal list
-            DrishtiManager.post(newsArticle)
-                .then(() => this.props.history.push("/news"));
-        }
-    };
+        // Create the animal and redirect user to animal list
+        DrishtiManager.post(dailyDrishti)
+            .then(() => this.props.history.push("/drishti"));
+    }
+
 
     render() {
 
@@ -60,31 +67,105 @@ class DrishtiForm extends Component {
                 <form>
                     <fieldset>
                         <div>
-
-                            <label htmlFor="title">Title</label>
-
+                            <label htmlFor="title">Did I make my bed?</label>
                             <input
-                                type="text"
-                                required
+                                type="checkbox"
                                 onChange={this.handleFieldChange}
-                                id="title"
-                                placeholder="Article Title"
+                                id="bed"
                             />
-                            <label htmlFor="synopsis">Synopsis</label>
+                            <label htmlFor="title">Did I sleep more than 7 hours?</label>
                             <input
-                                type="text"
-                                required
+                                type="checkbox"
                                 onChange={this.handleFieldChange}
-                                id="synopsis"
-                                placeholder="Synopsis"
+                                id="sleep"
                             />
-                            <label htmlFor="url">URL</label>
+                            <label htmlFor="title">Did I brush my teeth</label>
+                            <input
+                                type="checkbox"
+                                onChange={this.handleFieldChange}
+                                id="teeth"
+                            />
+                            <label htmlFor="title">Did I eat 2 vegtables today? -potatoes don't count-</label>
+                            <input
+                                type="checkbox"
+                                onChange={this.handleFieldChange}
+                                id="veggie"
+                            />
+                            <label htmlFor="title">Did I eat a fruit today?</label>
+                            <input
+                                type="checkbox"
+                                onChange={this.handleFieldChange}
+                                id="fruit"
+                            />
+                            <label htmlFor="title">Did you sleep more than 7 hours?</label>
+                            <input
+                                type="checkbox"
+                                onChange={this.handleFieldChange}
+                                id="bed"
+                            />
+                            <label htmlFor="title">Did I drink plenty of water today?</label>
+                            <input
+                                type="checkbox"
+                                onChange={this.handleFieldChange}
+                                id="water"
+                            />
+                            <label htmlFor="title">Did I eat enough protein today?</label>
+                            <input
+                                type="checkbox"
+                                onChange={this.handleFieldChange}
+                                id="protein"
+                            />
+                            <label htmlFor="title">Did I laugh today?</label>
+                            <input
+                                type="checkbox"
+                                onChange={this.handleFieldChange}
+                                id="laughed"
+                            />
+                            <label htmlFor="title">Did I meditate or take time for myself today?</label>
+                            <input
+                                type="checkbox"
+                                onChange={this.handleFieldChange}
+                                id="meditation"
+                            />
+                            <label htmlFor="title">Did I treat people with kindness today?</label>
+                            <input
+                                type="checkbox"
+                                onChange={this.handleFieldChange}
+                                id="kindness"
+                            />
+                            <label htmlFor="title">Was I grateful for something today?</label>
+                            <input
+                                type="checkbox"
+                                onChange={this.handleFieldChange}
+                                id="grateful"
+                            />
+                            <label htmlFor="title">Did I do something hard or challenging today to better myself?</label>
+                            <input
+                                type="checkbox"
+                                onChange={this.handleFieldChange}
+                                id="hardThing"
+                            />
+
+                            <label htmlFor="movement">Movement of the Day</label>
                             <input
                                 type="text"
-                                required
                                 onChange={this.handleFieldChange}
-                                id="url"
-                                placeholder="URL"
+                                id="movement"
+                                placeholder="Movement"
+                            />
+                            <label htmlFor="food">Food for the Day</label>
+                            <input
+                                type="text"
+                                onChange={this.handleFieldChange}
+                                id="food"
+                                placeholder="Food"
+                            />
+                            <label htmlFor="notes">Notes</label>
+                            <input
+                                type="text"
+                                onChange={this.handleFieldChange}
+                                id="notes"
+                                placeholder="Notes"
                             />
                         </div>
 
@@ -92,7 +173,7 @@ class DrishtiForm extends Component {
                             <button
                                 type="button"
                                 disabled={this.state.loadingStatus}
-                                onClick={this.constructNewNewsArticle}
+                                onClick={this.constructNewDrishti}
                             >Submit</button>
                         </div>
                     </fieldset>
@@ -100,6 +181,7 @@ class DrishtiForm extends Component {
             </>
         )
     }
-}
+};
+
 
 export default DrishtiForm
