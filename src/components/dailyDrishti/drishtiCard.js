@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import DrishtiManager from '../../modules/DrishtiManager';
 
 class DrishtiCard extends Component {
 
@@ -8,20 +9,18 @@ return (
     <div >
       <div >
         <h3>
-          Title:{" "}
-          <span>{this.props.newsProp.title}</span>
+          Date:{" "}
+          <span>{this.props.drishtiProp.date}</span>
         </h3>
-        <p>Synopsis: {this.props.newsProp.synopsis}</p>
-        <p>URL: {this.props.newsProp.url}</p>
         <button
           type="button"
           disabled={this.props.loadingStatus}
-          onClick={() => this.props.deleteNewsArticle(this.props.newsProp.id)}
+          onClick={() => this.props.deleteDrishti(this.props.drishtiProp.id)}
         >
           Delete
         </button>
         <button type="button"
-      onClick={() => {this.props.history.push(`/news/${this.props.newsProp.id}/edit`)}}>Edit</button>
+      onClick={() => {this.props.history.push(`/drishti/${this.props.drishtiProp.id}/edit`)}}>View Details</button>
       </div>
     </div>
   );
