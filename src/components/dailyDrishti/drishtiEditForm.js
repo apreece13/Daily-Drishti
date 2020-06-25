@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import DrishtiManager from '../../modules/DrishtiManager';
+import React, { Component } from "react"
+import DrishtiManager from "../../modules/DrishtiManager"
 
-class DrishtiForm extends Component {
+
+class DrishtiEditForm extends Component {
     state = {
         bed: false,
         sleep: false,
@@ -23,18 +24,15 @@ class DrishtiForm extends Component {
     };
 
     handleFieldChange = evt => {
-        const stateToChange = {};
+      const stateToChange = {}
+      stateToChange[evt.target.id] = evt.target.value
+      this.setState(stateToChange)
+    }
 
-        stateToChange[evt.target.id] = evt.target.value;
-        console.log("evt.target.id", evt.target.id)
-        console.log("stateToChange", stateToChange)
-        this.setState(stateToChange);
-    };
-
-    constructNewDrishti = evt => {
+    updateExistingDrishti = evt => {
         evt.preventDefault();
         this.setState({ loadingStatus: true });
-        const dailyDrishti = {
+        const editedDrishti = {
             bed: this.state.bed,
             sleep: this.state.sleep,
             teeth: this.state.teeth,
@@ -54,14 +52,37 @@ class DrishtiForm extends Component {
             date: this.state.date,
         };
 
-        // Create the animal and redirect user to animal list
-        DrishtiManager.post(dailyDrishti)
-            .then(() => this.props.history.push("/drishti"));
+      DrishtiManager.update(editedDrishti)
+      .then(() => this.props.history.push("/dailyDrishti"))
     }
 
+    componentDidMount() {
+      DrishtiManager.get(this.props.match.params.drishtiId)
+      .then(dailyDrishti => {
+          this.setState({
+            bed: dailyDrishti.bed,
+            sleep: dailyDrishti.sleep,
+            teeth: dailyDrishti.teeth,
+            veggie: dailyDrishti.veggie,
+            fruit: dailyDrishti.fruit,
+            water: dailyDrishti.water,
+            protein: dailyDrishti.protein,
+            laughed: dailyDrishti.laughed,
+            meditation: dailyDrishti.meditation,
+            kindness: dailyDrishti.kindness,
+            grateful: dailyDrishti.grateful,
+            hardThing: dailyDrishti.hardThing,
+            movement: dailyDrishti.movement,
+            food: dailyDrishti.food,
+            notes: dailyDrishti.notes,
+            userId: 1,
+            date: dailyDrishti.date,
+            loadingStatus: false
+          });
+      });
+    }
 
     render() {
-
         return (
             <>
                 <form>
@@ -72,72 +93,84 @@ class DrishtiForm extends Component {
                                 type="checkbox"
                                 onChange={this.handleFieldChange}
                                 id="bed"
+                                value={this.state.bed}
                             />
                             <label htmlFor="title">Did I sleep more than 7 hours?</label>
                             <input
                                 type="checkbox"
                                 onChange={this.handleFieldChange}
                                 id="sleep"
+                                value={this.state.sleep}
                             />
                             <label htmlFor="title">Did I brush my teeth</label>
                             <input
                                 type="checkbox"
                                 onChange={this.handleFieldChange}
                                 id="teeth"
+                                value={this.state.teeth}
                             />
                             <label htmlFor="title">Did I eat 2 vegtables today? -potatoes don't count-</label>
                             <input
                                 type="checkbox"
                                 onChange={this.handleFieldChange}
                                 id="veggie"
+                                value={this.state.veggie}
                             />
                             <label htmlFor="title">Did I eat a fruit today?</label>
                             <input
                                 type="checkbox"
                                 onChange={this.handleFieldChange}
                                 id="fruit"
+                                value={this.state.fruit}
                             />
                             <label htmlFor="title">Did I drink plenty of water today?</label>
                             <input
                                 type="checkbox"
                                 onChange={this.handleFieldChange}
                                 id="water"
+                                value={this.state.water}
                             />
                             <label htmlFor="title">Did I eat enough protein today?</label>
                             <input
                                 type="checkbox"
                                 onChange={this.handleFieldChange}
                                 id="protein"
+                                value={this.state.protein}
                             />
                             <label htmlFor="title">Did I laugh today?</label>
                             <input
                                 type="checkbox"
                                 onChange={this.handleFieldChange}
                                 id="laughed"
+                                value={this.state.laughed}
                             />
                             <label htmlFor="title">Did I meditate or take time for myself today?</label>
                             <input
                                 type="checkbox"
                                 onChange={this.handleFieldChange}
                                 id="meditation"
+                                value={this.state.meditation}
                             />
                             <label htmlFor="title">Did I treat people with kindness today?</label>
                             <input
                                 type="checkbox"
                                 onChange={this.handleFieldChange}
                                 id="kindness"
+                                value={this.state.kindness}
                             />
                             <label htmlFor="title">Was I grateful for something today?</label>
                             <input
                                 type="checkbox"
                                 onChange={this.handleFieldChange}
                                 id="grateful"
+                                value={this.state.grateful}
                             />
                             <label htmlFor="title">Did I do something hard or challenging today to better myself?</label>
                             <input
                                 type="checkbox"
                                 onChange={this.handleFieldChange}
                                 id="hardThing"
+                                value={this.state.hardThing}
                             />
 
                             <label htmlFor="movement">Movement of the Day</label>
@@ -146,6 +179,7 @@ class DrishtiForm extends Component {
                                 onChange={this.handleFieldChange}
                                 id="movement"
                                 placeholder="Movement"
+                                value={this.state.movement}
                             />
                             <label htmlFor="food">Food for the Day</label>
                             <input
@@ -153,6 +187,7 @@ class DrishtiForm extends Component {
                                 onChange={this.handleFieldChange}
                                 id="food"
                                 placeholder="Food"
+                                value={this.state.food}
                             />
                             <label htmlFor="notes">Notes</label>
                             <input
@@ -160,22 +195,22 @@ class DrishtiForm extends Component {
                                 onChange={this.handleFieldChange}
                                 id="notes"
                                 placeholder="Notes"
+                                value={this.state.notes}
                             />
                         </div>
 
-                        <div className="alignRight">
+                        <div>
                             <button
                                 type="button"
                                 disabled={this.state.loadingStatus}
-                                onClick={this.constructNewDrishti}
+                                onClick={this.updateExistingDrishti}
                             >Submit</button>
                         </div>
                     </fieldset>
                 </form>
             </>
-        )
+      );
     }
-};
+}
 
-
-export default DrishtiForm
+export default DrishtiEditForm

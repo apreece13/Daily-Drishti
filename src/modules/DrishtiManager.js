@@ -25,7 +25,7 @@ const DrishtiManager = {
   },
   update(editedDailyDrishti) {
     // refactor this fetch call as well to make sure that the edited animal retains the logged in user's id
-    return fetch(`${remoteURL}/newsArticles/${editedDailyDrishti.id}`, {
+    return fetch(`${remoteURL}/dailyDrishti/${editedDailyDrishti.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

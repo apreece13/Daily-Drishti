@@ -18,7 +18,7 @@ componentDidMount(){
     })
 }
 
-deleteNewsArticle = id => {
+deleteDrishti = id => {
   DrishtiManager.delete(id)
   .then(() => {
    DrishtiManager.getAll()
@@ -48,8 +48,7 @@ render(){
         New Drishti
     </button>
   </section>
-        <div className="container-cards">
-            {/* <h1>I have a monkey named {this.monkies.name}</h1> */}
+        <div >
             {this.state.dailyDrishti.sort((a,b)=>{return new Date(b.date)- new Date(a.date) }).map(drishtiInLoop => <DrishtiCard key={drishtiInLoop.id} drishtiProp={drishtiInLoop} deleteDrishti={this.deleteDrishti} {...this.props}/>)}
         </div>
         </>

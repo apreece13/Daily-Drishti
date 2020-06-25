@@ -1,42 +1,102 @@
 {
-    "users": [
-        {
-            "id": 1,
-            "username":"Creator",
-            "name":"Austin Preece",
-            "password":"Password",
-            "emailAddress":"me@me.com",
-            "phoneNumber": "304-555-5555"
-        }
-    ],
-    "dailyDrishti":[
-        {
-            "id":1,
-            "userId":1,
-            "date":"",
-            "bed":false,
-            "sleep":false,
-            "teeth":false,
-            "veggie":false,
-            "fruit":false,
-            "water":false,
-            "protein":false,
-            "laughed":false,
-            "meditation":false,
-            "kindness":false,
-            "grateful":false,
-            "hardThing":false,
-            "movement":"Walked the dog 2 miles.",
-            "food":"Meat and potatoes.",
-            "notes":"Here are some notes I made about my day."
-        }
-    ],
-    "toDoList":[
-        {
-            "id":1,
-            "userId":1,
-            "task": "This is the first task created.",
-            "completed": true
-        }
-    ]
+  "users": [
+    {
+      "id": 1,
+      "username": "Creator",
+      "name": "Austin Preece",
+      "password": "Password",
+      "emailAddress": "me@me.com",
+      "phoneNumber": "304-555-5555"
+    }
+  ],
+  "dailyDrishti": [
+    {
+      "id": 1,
+      "userId": 1,
+      "date": "",
+      "bed": false,
+      "sleep": false,
+      "teeth": false,
+      "veggie": false,
+      "fruit": false,
+      "water": false,
+      "protein": false,
+      "laughed": false,
+      "meditation": false,
+      "kindness": false,
+      "grateful": false,
+      "hardThing": false,
+      "movement": "Walked the dog 2 miles.",
+      "food": "Meat and potatoes.",
+      "notes": "Here are some notes I made about my day."
+    },
+    {
+      "bed": false,
+      "sleep": false,
+      "teeth": "on",
+      "veggie": false,
+      "fruit": "on",
+      "water": false,
+      "protein": false,
+      "laughed": false,
+      "meditation": "on",
+      "kindness": false,
+      "grateful": false,
+      "hardThing": false,
+      "movement": "",
+      "food": "",
+      "notes": "",
+      "userId": 1,
+      "date": "2020-06-24T19:58:39.117Z",
+      "id": 3
+    },
+    {
+      "bed": "on",
+      "sleep": false,
+      "teeth": false,
+      "veggie": "on",
+      "fruit": false,
+      "water": false,
+      "protein": false,
+      "laughed": false,
+      "meditation": "on",
+      "kindness": false,
+      "grateful": false,
+      "hardThing": "on",
+      "movement": "Run",
+      "food": "Broccoli",
+      "notes": "",
+      "userId": 1,
+      "date": "2020-06-25T14:16:35.565Z",
+      "id": 4
+    },
+    {
+      "bed": "on",
+      "sleep": "on",
+      "teeth": "on",
+      "veggie": "on",
+      "fruit": "on",
+      "water": "on",
+      "protein": "on",
+      "laughed": "on",
+      "meditation": "on",
+      "kindness": "on",
+      "grateful": "on",
+      "hardThing": "on",
+      "movement": "Run",
+      "food": "Broccoli",
+      "notes": "Big test",
+      "userId": 1,
+      "date": "2020-06-25T14:44:41.255Z",
+      "id": 5
+    }
+  ],
+  "toDoList": [
+    {
+      "id": 1,
+      "userId": 1,
+      "task": "This is the first task created.",
+      "completed": true
+    }
+  ]
 }

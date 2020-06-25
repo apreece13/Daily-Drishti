@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import DrishtiManager from '../../modules/DrishtiManager';
 
 class DrishtiCard extends Component {
 
