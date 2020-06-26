@@ -30,12 +30,12 @@ deleteDrishti = id => {
   })
 }
 
-handleDelete = () => {
-  this.setState({ loadingStatus: true });
-  DrishtiManager.delete(this.props.drishtiId).then(() =>
-    this.props.history.push("/drishti")
-  );
-};
+// handleDelete = () => {
+//   this.setState({ loadingStatus: true });
+//   DrishtiManager.delete(this.props.drishtiId).then(() =>
+//     this.props.history.push("/drishti")
+//   );
+// };
 
 
 render(){

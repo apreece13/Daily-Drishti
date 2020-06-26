@@ -1,6 +1,16 @@
 import React, { Component } from "react";
 // import DrishtiManager from '../../modules/DrishtiManager';
 
+// const object = { bed: true, sleep: false, teeth: true };
+// counter = 0, if counter equals true counter = ++ conditional needs to be in the loop
+// for (const property in object) {
+//   console.log(`${property}: ${object[property]}`);
+
+// loop over object
+// conditional to find out the console log is true
+// counter
+
+
 class DrishtiCard extends Component {
 
 render() {

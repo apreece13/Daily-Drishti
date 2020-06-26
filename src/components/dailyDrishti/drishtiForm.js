@@ -31,6 +31,16 @@ class DrishtiForm extends Component {
         this.setState(stateToChange);
     };
 
+    handleFieldChangeChecked = evt => {
+        const stateToChange = {};
+        // console.log("this.state[evt.target.value]")
+        // this.state[evt.target.value] === stateToChange[evt.target.id] ? stateToChange[evt.target.id] = true : stateToChange[evt.target.id] = false
+        stateToChange[evt.target.id] = evt.target.checked
+        // console.log("evt.target.id", evt.target.id)
+        // console.log("stateToChange", stateToChange)
+        this.setState(stateToChange);
+    };
+
     constructNewDrishti = evt => {
         evt.preventDefault();
         this.setState({ loadingStatus: true });
@@ -54,7 +64,6 @@ class DrishtiForm extends Component {
             date: this.state.date,
         };
 
-        // Create the animal and redirect user to animal list
         DrishtiManager.post(dailyDrishti)
             .then(() => this.props.history.push("/drishti"));
     }
@@ -70,73 +79,75 @@ class DrishtiForm extends Component {
                             <label htmlFor="title">Did I make my bed?</label>
                             <input
                                 type="checkbox"
-                                onChange={this.handleFieldChange}
+                                onChange={this.handleFieldChangeChecked}
                                 id="bed"
+                                // checked="this.stateToChange"
+                                
                             />
                             <label htmlFor="title">Did I sleep more than 7 hours?</label>
                             <input
                                 type="checkbox"
-                                onChange={this.handleFieldChange}
+                                onChange={this.handleFieldChangeChecked}
                                 id="sleep"
                             />
                             <label htmlFor="title">Did I brush my teeth</label>
                             <input
                                 type="checkbox"
-                                onChange={this.handleFieldChange}
+                                onChange={this.handleFieldChangeChecked}
                                 id="teeth"
                             />
                             <label htmlFor="title">Did I eat 2 vegtables today? -potatoes don't count-</label>
                             <input
                                 type="checkbox"
-                                onChange={this.handleFieldChange}
+                                onChange={this.handleFieldChangeChecked}
                                 id="veggie"
                             />
                             <label htmlFor="title">Did I eat a fruit today?</label>
                             <input
                                 type="checkbox"
-                                onChange={this.handleFieldChange}
+                                onChange={this.handleFieldChangeChecked}
                                 id="fruit"
                             />
                             <label htmlFor="title">Did I drink plenty of water today?</label>
                             <input
                                 type="checkbox"
-                                onChange={this.handleFieldChange}
+                                onChange={this.handleFieldChangeChecked}
                                 id="water"
                             />
                             <label htmlFor="title">Did I eat enough protein today?</label>
                             <input
                                 type="checkbox"
-                                onChange={this.handleFieldChange}
+                                onChange={this.handleFieldChangeChecked}
                                 id="protein"
                             />
                             <label htmlFor="title">Did I laugh today?</label>
                             <input
                                 type="checkbox"
-                                onChange={this.handleFieldChange}
+                                onChange={this.handleFieldChangeChecked}
                                 id="laughed"
                             />
                             <label htmlFor="title">Did I meditate or take time for myself today?</label>
                             <input
                                 type="checkbox"
-                                onChange={this.handleFieldChange}
+                                onChange={this.handleFieldChangeChecked}
                                 id="meditation"
                             />
                             <label htmlFor="title">Did I treat people with kindness today?</label>
                             <input
                                 type="checkbox"
-                                onChange={this.handleFieldChange}
+                                onChange={this.handleFieldChangeChecked}
                                 id="kindness"
                             />
                             <label htmlFor="title">Was I grateful for something today?</label>
                             <input
                                 type="checkbox"
-                                onChange={this.handleFieldChange}
+                                onChange={this.handleFieldChangeChecked}
                                 id="grateful"
                             />
                             <label htmlFor="title">Did I do something hard or challenging today to better myself?</label>
                             <input
                                 type="checkbox"
-                                onChange={this.handleFieldChange}
+                                onChange={this.handleFieldChangeChecked}
                                 id="hardThing"
                             />
 
