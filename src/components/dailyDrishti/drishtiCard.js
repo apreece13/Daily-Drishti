@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Card, Button, Col, ProgressBar } from 'react-bootstrap'
 // import DrishtiManager from '../../modules/DrishtiManager';
 
 // const object = { bed: true, sleep: false, teeth: true };
@@ -13,28 +14,42 @@ import React, { Component } from "react";
 
 class DrishtiCard extends Component {
 
-render() {
+  render() {
 
-return (
-    <div >
-      <div >
-        <h3>
+    return (
+      <Card
+        style={{ width: '30rem' }}
+        className="text-center" >
+        <Card.Header>
           Date:{" "}
           <span>{this.props.drishtiProp.date}</span>
-        </h3>
-        <button
-          type="button"
-          disabled={this.props.loadingStatus}
-          onClick={() => this.props.deleteDrishti(this.props.drishtiProp.id)}
-        >
-          Delete
-        </button>
-        <button type="button"
-      onClick={() => {this.props.history.push(`/drishti/${this.props.drishtiProp.id}/edit`)}}>View Details</button>
-      </div>
-    </div>
-  );
-}
+        </Card.Header>
+
+        <ProgressBar animated variant="success" now={45} />
+
+        <Col>
+          <Button
+
+            style={{ width: '14rem' }}
+            variant="outline-secondary"
+            size="sm"
+            type="button"
+            onClick={() => { this.props.history.push(`/drishti/${this.props.drishtiProp.id}/edit`) }}>View Details</Button>
+
+          <Button
+            style={{ width: '14rem' }}
+            variant="outline-danger"
+            type="button"
+            size="sm"
+            disabled={this.props.loadingStatus}
+            onClick={() => this.props.deleteDrishti(this.props.drishtiProp.id)}
+          >
+            Delete
+        </Button>
+       </Col>
+      </Card>
+    );
+  }
 
 }
 

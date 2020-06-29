@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import DrishtiCard from './drishtiCard'
 import DrishtiManager from '../../modules/DrishtiManager'
+import { CardDeck, Button } from 'react-bootstrap'
 
 
 class DrishtiList extends Component {
@@ -42,14 +43,16 @@ render(){
     return(
       <>
       <section>
-    <button type="button"
-        className="btn"
+    <Button
+        variant="outline-success"
         onClick={() => {this.props.history.push("/drishti/new")}}>
         New Drishti
-    </button>
+    </Button>
   </section>
         <div >
-            {this.state.dailyDrishti.sort((a,b)=>{return new Date(b.date)- new Date(a.date) }).map(drishtiInLoop => <DrishtiCard key={drishtiInLoop.id} drishtiProp={drishtiInLoop} deleteDrishti={this.deleteDrishti} {...this.props}/>)}
+            <CardDeck>
+            {this.state.dailyDrishti.sort((a,b)=>{return new Date(b.date)- new Date(a.date) }).map(drishtiInLoop => <DrishtiCard key={drishtiInLoop.id} drishtiProp={drishtiInLoop} deleteDrishti={this.deleteDrishti} {...this.props}/> )}
+            </CardDeck>
         </div>
         </>
     )
