@@ -2,17 +2,36 @@ import React, { Component } from "react";
 import { Card, Button, Col, ProgressBar } from 'react-bootstrap'
 // import DrishtiManager from '../../modules/DrishtiManager';
 
-// const object = { bed: true, sleep: false, teeth: true };
-// counter = 0, if counter equals true counter = ++ conditional needs to be in the loop
-// for (const property in object) {
-//   console.log(`${property}: ${object[property]}`);
 
+// counter = 0, if counter equals true counter = ++ conditional needs to be in the loop
+
+
+
+// bed: {this.props.drishtiProp.bed}
 // loop over object
 // conditional to find out the console log is true
 // counter
 
 
 class DrishtiCard extends Component {
+
+  handleCounter = () => {
+    const object = this.props.drishtiProp;
+    let counter = 0;
+    for (const property in object) {
+      if (object[property]===true) {
+        counter++
+      }
+    }
+    const counterProgress = (counter/12)*100;
+
+    console.log(counterProgress)
+
+    return(
+      counterProgress
+    )
+  }
+
 
   render() {
 
@@ -25,7 +44,7 @@ class DrishtiCard extends Component {
           <span>{this.props.drishtiProp.date}</span>
         </Card.Header>
 
-        <ProgressBar animated variant="success" now={45} />
+        <ProgressBar animated variant="success" now={this.handleCounter()} />
 
         <Col>
           <Button
@@ -46,7 +65,7 @@ class DrishtiCard extends Component {
           >
             Delete
         </Button>
-       </Col>
+        </Col>
       </Card>
     );
   }
