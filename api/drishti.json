@@ -31,26 +31,6 @@
       "date": ""
     },
     {
-      "bed": true,
-      "sleep": true,
-      "teeth": true,
-      "veggie": true,
-      "fruit": true,
-      "water": true,
-      "protein": true,
-      "laughed": true,
-      "meditation": true,
-      "kindness": true,
-      "grateful": true,
-      "hardThing": true,
-      "movement": "Run",
-      "food": "Broccoli",
-      "notes": "Checked checkbox",
-      "userId": 1,
-      "id": 2,
-      "date": "2020-06-26T18:04:05.221Z"
-    },
-    {
       "bed": false,
       "sleep": false,
       "teeth": false,
@@ -109,6 +89,26 @@
       "userId": 1,
       "date": "2020-06-26T23:34:07.974Z",
       "id": 5
+    },
+    {
+      "bed": true,
+      "sleep": false,
+      "teeth": true,
+      "veggie": false,
+      "fruit": true,
+      "water": false,
+      "protein": true,
+      "laughed": false,
+      "meditation": true,
+      "kindness": false,
+      "grateful": true,
+      "hardThing": false,
+      "movement": "Walked the Dog",
+      "food": "Eggs",
+      "notes": "Wonder whats for dinner",
+      "userId": 1,
+      "id": 6,
+      "date": "2020-06-29T14:57:23.830Z"
     }
   ],
   "toDoList": [
