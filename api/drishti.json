@@ -5,7 +5,7 @@
       "username": "Creator",
       "name": "Austin Preece",
       "password": "Password",
-      "emailAddress": "me@me.com",
+      "email": "me@me.com",
       "phoneNumber": "304-555-5555"
     }
   ],
@@ -89,6 +89,46 @@
       "userId": 1,
       "date": "2020-06-29T17:49:48.716Z",
       "id": 4
+    },
+    {
+      "bed": true,
+      "sleep": true,
+      "teeth": true,
+      "veggie": false,
+      "fruit": true,
+      "water": false,
+      "protein": true,
+      "laughed": false,
+      "meditation": true,
+      "kindness": false,
+      "grateful": true,
+      "hardThing": false,
+      "movement": "Run",
+      "food": "Broccoli",
+      "notes": "lololol",
+      "userId": 1,
+      "id": 5,
+      "date": "2020-06-29T19:42:21.175Z"
+    },
+    {
+      "bed": false,
+      "sleep": false,
+      "teeth": false,
+      "veggie": true,
+      "fruit": true,
+      "water": true,
+      "protein": true,
+      "laughed": false,
+      "meditation": false,
+      "kindness": false,
+      "grateful": false,
+      "hardThing": false,
+      "movement": "",
+      "food": "",
+      "notes": "",
+      "userId": 1,
+      "id": 6,
+      "date": "2020-06-30T14:32:41.974Z"
     }
   ],
   "toDoList": [

@@ -24,11 +24,19 @@ class DrishtiCard extends Component {
       }
     }
     const counterProgress = (counter/12)*100;
-
-    console.log(counterProgress)
-
     return(
       counterProgress
+    )
+  }
+
+  handleVariant = () => {
+    const counterProgress = this.handleCounter();
+    let progressVariant = "warning";
+    if(counterProgress>50){
+      progressVariant = "success"
+    }
+    return(
+      progressVariant
     )
   }
 
@@ -44,7 +52,7 @@ class DrishtiCard extends Component {
           <span>{this.props.drishtiProp.date}</span>
         </Card.Header>
 
-        <ProgressBar animated variant="success" now={this.handleCounter()} />
+        <ProgressBar animated variant={this.handleVariant()} now={this.handleCounter()} />
 
         <Col>
           <Button
