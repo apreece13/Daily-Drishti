@@ -17,13 +17,13 @@ class ApplicationViews extends Component {
         {/* <Route exact path="/" render={(props) => {
           return <Home />
         }} /> */}
-        <Route path="/drishti" render={(props) => {
+        <Route exact path="/drishti" render={(props) => {
           return <DrishtiList {...props} />
         }} />
-        <Route path="/drishti/new" render={(props) => {
+        <Route exact path="/drishti/new" render={(props) => {
           return <DrishtiForm {...props} />
         }} />
-        <Route path="/drishti/:drishtiId(\d+)/edit" render={(props) => {
+        <Route exact path="/drishti/:drishtiId(\d+)/edit" render={(props) => {
           return <DrishtiEditForm {...props} />
         }} />
         <Route exact path="/drishti/:drishtiId(\d+)" render={(props) => {
