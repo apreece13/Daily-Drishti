@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import DrishtiCard from './drishtiCard'
+import DrishtiCard from './DrishtiCard'
 import DrishtiManager from '../../modules/DrishtiManager'
 import { CardDeck, Button } from 'react-bootstrap'
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import RegisterManager from "../../modules/RegisterManager";
-import "../home/Home.css";
+// import "../home/Home.css";
 
 class Login extends Component {
   // Set initial state

@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import DrishtiManager from "../../modules/DrishtiManager"
+import { Modal } from "react-bootstrap";
 
 
 class DrishtiEditForm extends Component {
@@ -25,11 +26,7 @@ class DrishtiEditForm extends Component {
 
     handleFieldChangeChecked = evt => {
         const stateToChange = {};
-        // console.log("this.state[evt.target.value]")
-        // this.state[evt.target.value] === stateToChange[evt.target.id] ? stateToChange[evt.target.id] = true : stateToChange[evt.target.id] = false
         stateToChange[evt.target.id] = evt.target.checked
-        // console.log("evt.target.id", evt.target.id)
-        // console.log("stateToChange", stateToChange)
         this.setState(stateToChange);
     };
 
@@ -96,6 +93,7 @@ class DrishtiEditForm extends Component {
     render() {
         return (
             <>
+            
                 <form>
                     <fieldset>
                         <div>

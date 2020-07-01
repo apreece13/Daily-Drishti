@@ -31,21 +31,28 @@ class DrishtiCard extends Component {
 
   handleVariant = () => {
     const counterProgress = this.handleCounter();
-    let progressVariant = "warning";
-    if(counterProgress>50){
+    let progressVariant = "danger";
+    if(counterProgress===100){
+      progressVariant = "primary"
+    } else if(counterProgress>60) {
       progressVariant = "success"
+    } else if (counterProgress>20){
+      progressVariant = "warning"
     }
     return(
       progressVariant
     )
   }
+  
 
 
   render() {
 
     return (
       <Card
-        style={{ width: '30rem' }}
+        border="success"
+        bg="light"
+        style={{ width: '30rem'}}
         className="text-center" >
         <Card.Header>
           Date:{" "}
@@ -56,15 +63,14 @@ class DrishtiCard extends Component {
 
         <Col>
           <Button
-
-            style={{ width: '14rem' }}
+            style={{ margin: '.5em' }}
             variant="outline-secondary"
             size="sm"
             type="button"
             onClick={() => { this.props.history.push(`/drishti/${this.props.drishtiProp.id}/edit`) }}>View Details</Button>
 
           <Button
-            style={{ width: '14rem' }}
+            style={{ margin: '.5em' }}
             variant="outline-danger"
             type="button"
             size="sm"

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import RegisterManager from "../../modules/RegisterManager.js";
-import "../home/Home.css";
+// import "../home/Home.css";
 
 class RegisterForm extends Component {
   state = {
