@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Card, Button, Col, ProgressBar } from 'react-bootstrap'
+import Moment from "react-moment"
 // import DrishtiManager from '../../modules/DrishtiManager';
 
 
@@ -44,6 +45,13 @@ class DrishtiCard extends Component {
     )
   }
   
+//   dateString = (date) =>  {
+//  date = new Date();
+//   var dateString = date.getFullYear()-("0" + date.getMonth()).slice(-2)-("0" + date.getDate()).slice(-2)
+//   return(
+//     dateString
+//   )
+// }
 
 
   render() {
@@ -54,9 +62,10 @@ class DrishtiCard extends Component {
         bg="light"
         style={{ width: '30rem'}}
         className="text-center" >
+          
         <Card.Header>
-          Date:{" "}
-          <span>{this.props.drishtiProp.date}</span>
+          Date:{<Moment format="MM/DD/YYYY HH:mm">
+               {new Date(this.props.drishtiProp.date)}</Moment>}
         </Card.Header>
 
         <ProgressBar animated variant={this.handleVariant()} now={this.handleCounter()} />
