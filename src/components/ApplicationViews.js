@@ -28,8 +28,8 @@ class ApplicationViews extends Component {
           return <RegisterForm {...props} />;
         }} />
 
-        <Route exact path="/profile" render={(props) => {
-          return <Profile {...props} />
+        <Route exact path="/profile/:userId(\d+)" render={(props) => {
+          return <Profile userId={props.match.params.userId} {...props} />
         }} />
 
         <Route exact path="/drishti" render={(props) => {

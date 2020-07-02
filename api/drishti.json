@@ -17,7 +17,7 @@
       "id": 2
     },
     {
-      "name": "Rob",
+      "name": "Robert",
       "username": "Robby",
       "email": "Rob@test.com",
       "password": "Password",
@@ -45,26 +45,6 @@
       "userId": 1,
       "id": 1,
       "date": ""
-    },
-    {
-      "bed": true,
-      "sleep": false,
-      "teeth": true,
-      "veggie": false,
-      "fruit": true,
-      "water": false,
-      "protein": false,
-      "laughed": false,
-      "meditation": false,
-      "kindness": false,
-      "grateful": false,
-      "hardThing": false,
-      "movement": "Run",
-      "food": "Broccoli",
-      "notes": "Big test",
-      "userId": 1,
-      "date": "2020-06-29T17:47:34.237Z",
-      "id": 2
     },
     {
       "bed": true,
@@ -165,6 +145,26 @@
       "userId": 1,
       "id": 7,
       "date": "2020-06-30T19:59:05.828Z"
+    },
+    {
+      "bed": true,
+      "sleep": false,
+      "teeth": true,
+      "veggie": false,
+      "fruit": true,
+      "water": false,
+      "protein": true,
+      "laughed": false,
+      "meditation": true,
+      "kindness": false,
+      "grateful": true,
+      "hardThing": false,
+      "movement": "jf;sdk",
+      "food": "",
+      "notes": "",
+      "userId": 1,
+      "id": 8,
+      "date": "2020-07-01T20:30:38.641Z"
     }
   ],
   "toDoList": [

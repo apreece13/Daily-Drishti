@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DrishtiManager from '../../modules/DrishtiManager';
-import {Form, Col, Row, Button} from 'react-bootstrap';
+import { Form, Col, Row, Button } from 'react-bootstrap';
+import "./Drishti.css"
 
 class DrishtiForm extends Component {
     state = {
@@ -70,163 +71,166 @@ class DrishtiForm extends Component {
 
         return (
             <>
+            <div className="drishtiFormStyle">
                 <Form>
-                   
-                        <div>
-                            <Row>
-                                <Col>
-                        <fieldset>
-                            <label htmlFor="bed">Did I make my bed? </label>
-                            <input
-                                type="checkbox"
-                                onChange={this.handleFieldChangeChecked}
-                                id="bed"
-                                // checked="this.stateToChange"                                
-                            />
-                        </fieldset>
-                        </Col> 
-                        <Col>
-                        <fieldset>
-                            <label htmlFor="title">Did I sleep more than 7 hours?</label>
-                            <input
-                                type="checkbox"
-                                onChange={this.handleFieldChangeChecked}
-                                id="sleep"
-                            />
-                            </fieldset>
-                         </Col>
+
+                    <div>
+                        <Row>
+                            <Col>
+                                    <label htmlFor="bed">Did I make my bed?&nbsp;</label>
+                                    <input
+                                        type="checkbox"
+                                        onChange={this.handleFieldChangeChecked}
+                                        id="bed"                               
+                                    />
+                            </Col>
+                            <Col>
+                                    <label htmlFor="title">Did I sleep more than 7 hours?&nbsp;</label>
+                                    <input
+                                        type="checkbox"
+                                        onChange={this.handleFieldChangeChecked}
+                                        id="sleep"
+                                    />
+                            </Col>
                         </Row>
 
                         <Row>
                             <Col>
-                            <label htmlFor="title">Did I brush my teeth</label>
-                            <input
-                                type="checkbox"
-                                onChange={this.handleFieldChangeChecked}
-                                id="teeth"
-                            />
+                                <label htmlFor="title">Did I brush my teeth?&nbsp;</label>
+                                <input
+                                    type="checkbox"
+                                    onChange={this.handleFieldChangeChecked}
+                                    id="teeth"
+                                />
                             </Col>
                             <Col>
-                            <label htmlFor="title">Did I eat 2 vegtables today? -potatoes don't count-</label>
-                            <input
-                                type="checkbox"
-                                onChange={this.handleFieldChangeChecked}
-                                id="veggie"
-                            />
+                                <label htmlFor="title">Did I eat 2 vegtables today? (potatoes don't count)&nbsp;</label>
+                                <input
+                                    type="checkbox"
+                                    onChange={this.handleFieldChangeChecked}
+                                    id="veggie"
+                                />
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                            <label htmlFor="title">Did I eat a fruit today?</label>
-                            <input
-                                type="checkbox"
-                                onChange={this.handleFieldChangeChecked}
-                                id="fruit"
-                            />
+                                <label htmlFor="title">Did I eat a fruit today?&nbsp;</label>
+                                <input
+                                    type="checkbox"
+                                    onChange={this.handleFieldChangeChecked}
+                                    id="fruit"
+                                />
                             </Col>
                             <Col>
-                            <label htmlFor="title">Did I drink plenty of water today?</label>
-                            <input
-                                type="checkbox"
-                                onChange={this.handleFieldChangeChecked}
-                                id="water"
-                            />
-                            </Col>
-                         </Row>
-                         <Row>
-                             <Col>
-                            <label htmlFor="title">Did I eat enough protein today?</label>
-                            <input
-                                type="checkbox"
-                                onChange={this.handleFieldChangeChecked}
-                                id="protein"
-                            />
-                            </Col>
-                            <Col>
-                            <label htmlFor="title">Did I laugh today?</label>
-                            <input
-                                type="checkbox"
-                                onChange={this.handleFieldChangeChecked}
-                                id="laughed"
-                            />
+                                <label htmlFor="title">Did I drink plenty of water today?&nbsp;</label>
+                                <input
+                                    type="checkbox"
+                                    onChange={this.handleFieldChangeChecked}
+                                    id="water"
+                                />
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                            <label htmlFor="title">Did I meditate or take time for myself today?</label>
-                            <input
-                                type="checkbox"
-                                onChange={this.handleFieldChangeChecked}
-                                id="meditation"
-                            />
+                                <label htmlFor="title">Did I eat enough protein today?&nbsp;</label>
+                                <input
+                                    type="checkbox"
+                                    onChange={this.handleFieldChangeChecked}
+                                    id="protein"
+                                />
                             </Col>
                             <Col>
-                            <label htmlFor="title">Did I treat people with kindness today?</label>
-                            <input
-                                type="checkbox"
-                                onChange={this.handleFieldChangeChecked}
-                                id="kindness"
-                            />
+                                <label htmlFor="title">Did I laugh today?&nbsp;</label>
+                                <input
+                                    type="checkbox"
+                                    onChange={this.handleFieldChangeChecked}
+                                    id="laughed"
+                                />
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                            <label htmlFor="title">Was I grateful for something today?</label>
-                            <input
-                                type="checkbox"
-                                onChange={this.handleFieldChangeChecked}
-                                id="grateful"
-                            />
+                                <label htmlFor="title">Did I meditate or take time for myself today? &nbsp;</label>
+                                <input
+                                    type="checkbox"
+                                    onChange={this.handleFieldChangeChecked}
+                                    id="meditation"
+                                />
                             </Col>
                             <Col>
-                            <label htmlFor="title">Did I do something hard or challenging today to better myself?</label>
-                            <input
-                                type="checkbox"
-                                onChange={this.handleFieldChangeChecked}
-                                id="hardThing"
-                            />
+                                <label htmlFor="title">Did I treat people with kindness today?&nbsp;</label>
+                                <input
+                                    type="checkbox"
+                                    onChange={this.handleFieldChangeChecked}
+                                    id="kindness"
+                                />
                             </Col>
                         </Row>
                         <Row>
                             <Col>
-                            <label htmlFor="movement">Movement of the Day</label>
-                            <input
-                                type="text"
-                                onChange={this.handleFieldChange}
-                                id="movement"
-                                placeholder="Movement"
-                            />
+                                <label htmlFor="title">Was I grateful for something today?&nbsp;</label>
+                                <input
+                                    type="checkbox"
+                                    onChange={this.handleFieldChangeChecked}
+                                    id="grateful"
+                                />
                             </Col>
                             <Col>
-                            <label htmlFor="food">Food for the Day</label>
-                            <input
-                                type="text"
-                                onChange={this.handleFieldChange}
-                                id="food"
-                                placeholder="Food"
-                            />
-                            </Col>
-                            <Col>
-                            <label htmlFor="notes">Notes</label>
-                            <input
-                                type="text"
-                                onChange={this.handleFieldChange}
-                                id="notes"
-                                placeholder="Notes"
-                            />
+                                <label htmlFor="title">Did I do something hard or challenging today to better myself?&nbsp;</label>
+                                <input
+                                    type="checkbox"
+                                    onChange={this.handleFieldChangeChecked}
+                                    id="hardThing"
+                                />
                             </Col>
                         </Row>
-                        </div>
+                        <Row>
+                            <Col>
+                                <label htmlFor="movement">Movement of the Day:</label>
+                                <textarea
+                                    onChange={this.handleFieldChange}
+                                    id="movement"
+                                    placeholder="Movement"
+                                    rows="5"
+                                    cols="50"
+                                    
+                                    
+                                />
+                            </Col>
+                            <Col>
+                                <label htmlFor="food">Food for the Day:</label>
+                                <textarea
+                                   
+                                    onChange={this.handleFieldChange}
+                                    id="food"
+                                    placeholder="Food"
+                                    rows="5"
+                                    cols="50"
+                                />
+                            </Col>
+                            <Col>
+                                <label htmlFor="notes">Notes: </label>
+                                <textarea
+                                    onChange={this.handleFieldChange}
+                                    id="notes"
+                                    placeholder="Notes"
+                                    rows="5"
+                                    cols="50"
+                                />
+                            </Col>
+                        </Row>
+                    </div>
 
-                        <div className="alignRight">
-                            <Button
-                                type="button"
-                                disabled={this.state.loadingStatus}
-                                onClick={this.constructNewDrishti}
-                            >Submit</Button>
-                        </div>
-                    
+                    <div className="alignRight">
+                        <Button
+                            type="button"
+                            disabled={this.state.loadingStatus}
+                            onClick={this.constructNewDrishti}
+                        >Submit</Button>
+                    </div>
+
                 </Form>
+                </div>
             </>
         )
     }

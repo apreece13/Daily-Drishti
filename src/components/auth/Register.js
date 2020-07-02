@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import RegisterManager from "../../modules/RegisterManager.js";
-// import "../home/Home.css";
+import "../home/Home.css";
 
 class RegisterForm extends Component {
   state = {
@@ -99,7 +99,7 @@ class RegisterForm extends Component {
                 required
                 onChange={this.handleFieldChange}
                 id="username"
-                placeholder="Username"
+                placeholder="username"
               />
               <br />
               <label htmlFor="email">Email</label>
@@ -125,7 +125,7 @@ class RegisterForm extends Component {
                 required
                 onChange={this.handleFieldChange}
                 id="phoneNumber"
-                placeholder="Phone Number"
+                placeholder="phone number"
               />
             </div>
 

@@ -13,7 +13,7 @@ class NavBar extends Component {
           <Nav className="mr-auto">
             <Nav.Link href="/" text="danger">Home</Nav.Link>
             <Nav.Link href="/drishti">Drishti</Nav.Link>
-            <Nav.Link href="/toDoList">To Do List</Nav.Link>
+            {/* <Nav.Link href="/toDoList">To Do List</Nav.Link> */}
             <Nav.Link href="/profile">Profile</Nav.Link>
           </Nav>
         </Navbar>

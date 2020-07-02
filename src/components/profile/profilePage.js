@@ -25,6 +25,7 @@ class Profile extends Component {
             email: this.state.email,
             password: this.state.password,
             phoneNumber: this.state.phoneNumber,
+            id: this.props.match.params.userId
         };
 
       RegisterManager.update(editedUser)
