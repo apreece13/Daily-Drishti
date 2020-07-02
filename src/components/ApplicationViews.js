@@ -25,29 +25,49 @@ class ApplicationViews extends Component {
         }} />
 
         <Route exact path="/register" render={(props) => {
-          return <RegisterForm {...props} />;
+          return <RegisterForm {...props} />
         }} />
 
-        <Route exact path="/profile/:userId(\d+)" render={(props) => {
-          return <Profile userId={props.match.params.userId} {...props} />
+        <Route exact path="/profile" render={(props) => {
+          if (this.isAuthenticated()) {
+            return <Profile userId={props.match.params.userId} {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
 
         <Route exact path="/drishti" render={(props) => {
-          return <DrishtiList {...props} />
+          if (this.isAuthenticated()) {
+            return <DrishtiList {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
 
         <Route exact path="/drishti/new" render={(props) => {
-          return <DrishtiForm {...props} />
+          if (this.isAuthenticated()) {
+            return <DrishtiForm {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
 
         <Route exact path="/drishti/:drishtiId(\d+)/edit" render={(props) => {
-          return <DrishtiEditForm {...props} />
+          if (this.isAuthenticated()) {
+            return <DrishtiEditForm {...props} />
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
 
         <Route exact path="/drishti/:drishtiId(\d+)" render={(props) => {
-          return <DrishtiCard drishtiId={props.match.params.drishtiId} {...props} />;
+          if (this.isAuthenticated()) {
+            return <DrishtiCard drishtiId={props.match.params.drishtiId} {...props} />;
+          } else {
+            return <Redirect to="/login" />
+          }
         }} />
-
+        
       </React.Fragment>
     )
   }

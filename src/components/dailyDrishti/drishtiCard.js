@@ -3,17 +3,6 @@ import { Card, Button, Col, ProgressBar } from 'react-bootstrap'
 import Moment from "react-moment"
 // import DrishtiManager from '../../modules/DrishtiManager';
 
-
-// counter = 0, if counter equals true counter = ++ conditional needs to be in the loop
-
-
-
-// bed: {this.props.drishtiProp.bed}
-// loop over object
-// conditional to find out the console log is true
-// counter
-
-
 class DrishtiCard extends Component {
 
   handleCounter = () => {
@@ -45,14 +34,6 @@ class DrishtiCard extends Component {
     )
   }
   
-//   dateString = (date) =>  {
-//  date = new Date();
-//   var dateString = date.getFullYear()-("0" + date.getMonth()).slice(-2)-("0" + date.getDate()).slice(-2)
-//   return(
-//     dateString
-//   )
-// }
-
 
   render() {
 
@@ -62,7 +43,7 @@ class DrishtiCard extends Component {
         bg="light"
         style={{ width: '30rem'}}
         className="text-center" >
-          
+
         <Card.Header>
           Date:{<Moment format="MM/DD/YYYY HH:mm">
                {new Date(this.props.drishtiProp.date)}</Moment>}

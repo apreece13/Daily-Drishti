@@ -25,7 +25,7 @@ class Profile extends Component {
             email: this.state.email,
             password: this.state.password,
             phoneNumber: this.state.phoneNumber,
-            id: this.props.match.params.userId
+            id: localStorage.getItem("userId")
         };
 
       RegisterManager.update(editedUser)
@@ -33,7 +33,7 @@ class Profile extends Component {
     }
 
     componentDidMount() {
-        RegisterManager.get(this.props.match.params.userId)
+        RegisterManager.get(localStorage.getItem("userId"))
         .then(profileInfo => {
             this.setState({
               name: profileInfo.name,

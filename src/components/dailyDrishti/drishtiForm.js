@@ -209,7 +209,7 @@ class DrishtiForm extends Component {
                                 />
                             </Col>
                             <Col>
-                                <label htmlFor="notes">Notes: </label>
+                                <label htmlFor="notes">Notes:</label>
                                 <textarea
                                     onChange={this.handleFieldChange}
                                     id="notes"

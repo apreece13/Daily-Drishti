@@ -32,7 +32,7 @@ class Home extends Component {
               this.props.history.push("/login");
             }}
           >
-            Please login.
+            Log in
           </button>
           <button
           className="home-btn"
@@ -41,7 +41,7 @@ class Home extends Component {
               this.props.history.push("/register");
             }}
           >
-            No acccount? Please register here.
+            No account? Register here
           </button>
         </>
       );

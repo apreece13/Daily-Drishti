@@ -42,7 +42,7 @@ deleteDrishti = id => {
 render(){
     return(
       <>
-      <section>
+      <section className="dristiList">
     <Button
         variant="outline-success"
         onClick={() => {this.props.history.push("/drishti/new")}}>

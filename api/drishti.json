@@ -1,12 +1,12 @@
 {
   "users": [
     {
-      "id": 1,
-      "username": "Creator",
       "name": "Austin Preece",
-      "password": "Password",
+      "username": "Creator",
       "email": "me@me.com",
-      "phoneNumber": "304-555-5555"
+      "password": "Password",
+      "phoneNumber": "304-555-5555",
+      "id": 1
     },
     {
       "name": "Hank",
@@ -45,26 +45,6 @@
       "userId": 1,
       "id": 1,
       "date": ""
-    },
-    {
-      "bed": true,
-      "sleep": false,
-      "teeth": true,
-      "veggie": true,
-      "fruit": true,
-      "water": false,
-      "protein": true,
-      "laughed": false,
-      "meditation": true,
-      "kindness": true,
-      "grateful": true,
-      "hardThing": false,
-      "movement": "walk",
-      "food": "radishes",
-      "notes": "lol",
-      "userId": 1,
-      "id": 3,
-      "date": "2020-06-29T17:47:53.152Z"
     },
     {
       "bed": true,
