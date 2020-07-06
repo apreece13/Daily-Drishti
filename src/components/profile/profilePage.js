@@ -28,85 +28,87 @@ class Profile extends Component {
             id: localStorage.getItem("userId")
         };
 
-      RegisterManager.update(editedUser)
-      .then(() => this.props.history.push("/"))
+        RegisterManager.update(editedUser)
+            .then(() => this.props.history.push("/"))
     }
 
     componentDidMount() {
         RegisterManager.get(localStorage.getItem("userId"))
-        .then(profileInfo => {
-            this.setState({
-              name: profileInfo.name,
-              username: profileInfo.username,
-              email: profileInfo.email,
-              password: profileInfo.password,
-              phoneNumber: profileInfo.phoneNumber,
+            .then(profileInfo => {
+                this.setState({
+                    name: profileInfo.name,
+                    username: profileInfo.username,
+                    email: profileInfo.email,
+                    password: profileInfo.password,
+                    phoneNumber: profileInfo.phoneNumber,
+                });
             });
-        });
-      }
+    }
 
     render() {
 
         return (
             <>
-                <form>
-                    <fieldset>
-                        <div>
-                            <label htmlFor="name">Name</label>
-                            <input
-                                type="text"
-                                required
-                                onChange={this.handleFieldChange}
-                                id="name"
-                                value={this.state.name}
-                            />
+                <div className="profile-form">
+                    <form>
+                        <fieldset>
+                            <div>
+                                <label htmlFor="name">Name</label>
+                                <input
+                                    type="text"
+                                    required
+                                    onChange={this.handleFieldChange}
+                                    id="name"
+                                    value={this.state.name}
+                                />
 
-                            <label htmlFor="username">Username</label>
-                            <input
-                                type="text"
-                                required
-                                onChange={this.handleFieldChange}
-                                id="username"
-                                value={this.state.username}
-                            />
+                                <label htmlFor="username">Username</label>
+                                <input
+                                    type="text"
+                                    required
+                                    onChange={this.handleFieldChange}
+                                    id="username"
+                                    value={this.state.username}
+                                />
+                                <br></br>
+                                <label htmlFor="email">Email</label>
+                                <input
+                                    type="text"
+                                    required
+                                    onChange={this.handleFieldChange}
+                                    id="email"
+                                    value={this.state.email}
+                                />
 
-                            <label htmlFor="email">Email</label>
-                            <input
-                                type="text"
-                                required
-                                onChange={this.handleFieldChange}
-                                id="email"
-                                value={this.state.email}
-                            />
+                                <label htmlFor="synopsis">Password</label>
+                                <input
+                                    type="text"
+                                    required
+                                    onChange={this.handleFieldChange}
+                                    id="password"
+                                    value={this.state.password}
+                                />
 
-                            <label htmlFor="synopsis">Password</label>
-                            <input
-                                type="text"
-                                required
-                                onChange={this.handleFieldChange}
-                                id="password"
-                                value={this.state.password}
-                            />
+                                <label htmlFor="phoneNumber">Phone Number</label>
+                                <input
+                                    type="text"
+                                    required
+                                    onChange={this.handleFieldChange}
+                                    id="phoneNumber"
+                                    value={this.state.phoneNumber}
+                                />
+                            </div>
 
-                            <label htmlFor="phoneNumber">Phone Number</label>
-                            <input
-                                type="text"
-                                required
-                                onChange={this.handleFieldChange}
-                                id="phoneNumber"
-                                value={this.state.phoneNumber}
-                            />
-                        </div>
-
-                        <div>
-                            <button
-                                type="button"
-                                disabled={this.state.loadingStatus}
-                                onClick={this.updateExistingUser}
-                            >Save Changes</button>
-                        </div>
-                    </fieldset>
-                </form>
+                            <div>
+                                <button
+                                    type="button"
+                                    disabled={this.state.loadingStatus}
+                                    onClick={this.updateExistingUser}
+                                >Save Changes</button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
             </>
         )
     }

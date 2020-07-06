@@ -45,7 +45,7 @@ class DrishtiCard extends Component {
         className="text-center" >
 
         <Card.Header>
-          Date:{<Moment format="MM/DD/YYYY HH:mm">
+          Date: &nbsp;{<Moment format="MM/DD/YYYY HH:mm">
                {new Date(this.props.drishtiProp.date)}</Moment>}
         </Card.Header>
 

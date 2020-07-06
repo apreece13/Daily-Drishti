@@ -49,7 +49,7 @@ render(){
         New Drishti
     </Button>
   </section>
-        <div >
+        <div className="dristiList" >
             <CardDeck>
             {this.state.dailyDrishti.sort((a,b)=>{return new Date(b.date)- new Date(a.date) }).map(drishtiInLoop => <DrishtiCard key={drishtiInLoop.id} drishtiProp={drishtiInLoop} deleteDrishti={this.deleteDrishti} {...this.props}/> )}
             </CardDeck>

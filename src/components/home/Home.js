@@ -25,6 +25,7 @@ class Home extends Component {
     } else {
       return (
         <>
+        <div >
           <button
           className="home-btn"
             type="button"
@@ -43,7 +44,7 @@ class Home extends Component {
           >
             No account? Register here
           </button>
-        </>
+          </div>        </>
       );
     }
   };
